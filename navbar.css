@@ -1,0 +1,76 @@
+.logo {
+  display: flex;
+  align-items: center; /* Vertical alignment */
+  width: 200px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  margin: fixed;
+}
+
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+.navbar {
+  background-color: #000000; /* Sky Blue */
+  overflow: hidden;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 5px 0; /* Add padding for spacing */
+}
+
+.nav-container a {
+  padding: 10px; /* Add padding around the buttons for spacing */
+  text-decoration: none;
+  color: white;
+  margin: 0 20px; /* Add margin between buttons */
+}
+
+.nav-container img.logo {
+  width: 150px; /* Adjust the width of the logo as needed */
+  height: auto; /* Adjust the height of the logo as needed */
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  font-size: large;
+  color: rgb(255, 255, 255); /* Light Grey */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #c28458; /* Steel Blue */
+}
+
+.navbar a.active {
+  background-color: #fff1e7; /* Steel Blue */
+  color: #EBEBEB;
+}
+
+.navbar button {
+  float: right;
+  margin: 10px;
+  padding: 5px 0px;
+  background-color: #87CEEB;
+  color: black;
+  text-decoration: none;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.navbar button:hover {
+  float: right;
+  margin: 10px;
+  padding: 5px 0px;
+  color: #EBEBEB;
+  background-color: #4682B4;
+  text-decoration: none;
+}

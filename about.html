@@ -1,0 +1,63 @@
+
+    
+    <div id="navbar-container"></div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Anteiku Café</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="navbar-container"></div>
+    
+    <section class="hero-section animate__animated animate__fadeIn">
+        <h1>Welcome to Anteiku Café</h1>
+        <p>Discover. Taste. Experience.</p>
+    </section>
+    
+    <div class="info-container">
+        <div class="info-box animate__animated animate__fadeInLeft">
+            <img src="images/ab.jpg" alt="Location Image">
+            <div class="text-content">
+                <h2>📍 Location</h2>
+                <p>Anteiku Café is nestled in the heart of Kuala Lumpur, offering a cozy retreat in the bustling city.</p>
+            </div>
+        </div>
+        <div class="info-box animate__animated animate__fadeInUp">
+            <img src="images/ab2.jpg" alt="Founder Image">
+            <div class="text-content">
+                <h2>👨‍🍳 Founder</h2>
+                <p>Established by three passionate food lovers, Mr. Rifqi, Mr. Han, and Rafiq, who envisioned a café that blends adventure with local flavors.</p>
+            </div>
+        </div>
+        <div class="info-box animate__animated animate__fadeInRight">
+            <img src="images/ab3.jpg" alt="Theme Image">
+            <div class="text-content">
+                <h2>🎨 Theme</h2>
+                <p>A fusion of Japanese vintage and modern aesthetics, inspired by anime culture, creativity, and community spirit.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer-container"></div>
+    
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('navbar-container').innerHTML = html;
+            });
+        
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-container').innerHTML = html;
+            });
+    </script>
+</body>
+</html>
+

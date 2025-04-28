@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>FAQ | Anteiku Café</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="faq.css">
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="navbar-container"></div>
+    <div id="faq">
+      <h1 id="title">FAQ</h1>
+      <ul>
+        <li>
+          <input type="checkbox" checked>
+          <i></i>
+          <h2>Does Anteiku Café offer home delivery?</h2>
+          <p>
+            No, Anteiku Café does not provide delivery services. All orders must be picked up in-store. We encourage customers to visit us and enjoy the cozy atmosphere of our café.
+          </p>
+        </li>
+
+        <li>
+          <input type="checkbox" checked>
+          <i></i>
+          <h2>How do I place an order at Anteiku Café?</h2>
+          <p>
+            You can place an order by visiting our café and choosing from our menu. If you're dining in, simply order at the counter, and our baristas will prepare your selection. For takeaway, inform our staff, and we'll pack your order accordingly.
+          </p>
+        </li>
+
+        <li>
+          <input type="checkbox" checked>
+          <i></i>
+          <h2>What payment methods are accepted at Anteiku Café?</h2>
+          <p>
+            We accept cash, credit cards, and debit cards. At the moment, we do not support mobile payment methods such as e-wallets.
+          </p>
+        </li>
+
+        <li>
+          <input type="checkbox" checked>
+          <i></i>
+          <h2>How often does Anteiku Café introduce new menu items?</h2>
+          <p>
+            We frequently update our menu with seasonal specials and limited-time drinks inspired by customer feedback. Be sure to check in regularly or follow us on social media for updates!
+          </p>
+        </li>
+
+        <li>
+          <input type="checkbox" checked>
+          <i></i>
+          <h2>Where does Anteiku Café source its coffee beans and ingredients?</h2>
+          <p>
+            We take pride in using high-quality, ethically sourced coffee beans from Japan and other select regions. Our ingredients are chosen carefully to maintain the authentic flavors and experience of our café.
+          </p>
+        </li>
+
+        <li>
+          <input type="checkbox" checked>
+          <i></i>
+          <h2>Can I purchase coffee beans or merchandise from Anteiku Café?</h2>
+          <p> 
+            Yes! We offer freshly roasted coffee beans, limited-edition mugs, and other exclusive Anteiku Café merchandise for purchase at our store.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <br><br>
+
+    <div id="footer-container"></div>
+
+    <script>
+      fetch('navbar.html')
+          .then(response => response.text())
+          .then(html => {
+            document.getElementById('navbar-container').innerHTML = html;
+      });
+
+      fetch('footer.html')
+          .then(response => response.text())
+          .then(html => {
+            document.getElementById('footer-container').innerHTML = html;
+      });
+    </script>
+</body>
+</html>

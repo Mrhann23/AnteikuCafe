@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Anteiku Café</title>
+    <link rel="stylesheet" href="event.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+<!-- Hero Section -->
+<section class="hero-section animate__animated animate__fadeIn">
+    <h1>Exciting Events at Anteiku Café</h1>
+    <p>Join us for unforgettable moments!</p>
+</section>
+
+<!-- Events Container -->
+<div class="event-container">
+    <div class="event-card animate__animated animate__fadeInLeft">
+        <img src="images/eve1.png" alt="Live Music Night">
+        <div class="event-text">
+            <h2>🎶 Live Music Night</h2>
+            <p>Enjoy live performances every Friday by local artists.</p>
+        </div>
+    </div>
+
+    <div class="event-card animate__animated animate__fadeInUp">
+        <img src="images/eve2.jpeg" alt="Coffee Workshop">
+        <div class="event-text">
+            <h2>☕ Coffee Workshop</h2>
+            <p>Learn to brew the perfect cup with our expert baristas.</p>
+        </div>
+    </div>
+
+    <div class="event-card animate__animated animate__fadeInRight">
+        <img src="images/eve3.jpg" alt="Themed Night">
+        <div class="event-text">
+            <h2>🌟 Themed Nights</h2>
+            <p>Experience unique themes every weekend!</p>
+        </div>
+    </div>
+</div>
+
+<div id="footer-container"></div>
+    
+<script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('navbar-container').innerHTML = html;
+        });
+    
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('footer-container').innerHTML = html;
+        });
+</script>
+
+</body>
+</html>

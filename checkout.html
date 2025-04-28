@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+    <div class='container'>
+        <div class='window'>
+            <div class='order-info'>
+                <div class='order-info-content'>
+                    <h2>Order Summary</h2>
+                    <div class='line'></div>
+                    <table class='order-table'>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+
+                    <div class='line'></div>
+
+                    <div class='total'>
+                        <div class='line'></div>
+                        <span style='float:left;'>
+                            <div class='left thin dense'>GST 6%</div>
+                            <div class='left thin dense'>Delivery</div>
+                            <div class='line'></div>
+                            <b>TOTAL</b>
+                        </span>
+                        <span style='float:right; text-align:right;'>
+                            <div class='right thin dense'></div>
+                            
+                            <div class='right thin dense'>RM 5.50</div>
+                            <div class='line'></div>
+                            <b class='right bold'></b>
+
+                            
+                        </span>
+                    </div>
+                </div>
+                <button onclick="checkout()" class='pay-btn'>Checkout</button>
+            </div>
+        </div>
+    </div>
+
+  <script>
+      // Load navbar content using JavaScript
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('navbar-container').innerHTML = html;
+        });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const queryParams = new URLSearchParams(window.location.search);
+        const itemName = queryParams.get('name');
+        const itemPrice = queryParams.get('price');
+        const itemImage = queryParams.get('image');
+        const itemQuantity = queryParams.get('quantity');
+
+        // Retrieve cart items from localStorage
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        let itemNames = cartItems.map(item => item.name);
+        let itemQuantities = cartItems.map(item => item.quantity);
+        let itemPrices = cartItems.map(item => item.price);
+
+        // Display cart items and lines in the order summary
+        let orderTableBody = document.querySelector('.order-table tbody');
+
+        cartItems.forEach((item, index) => {
+            // Add the order row
+            let orderRow = document.createElement('tr');
+            orderRow.innerHTML = `<td><img src="${item.image}" alt="Product Image" class="cart-item-image"></td><td>${item.name}</td><td>${item.quantity}</td><td>${item.price}</td>`;
+            orderTableBody.appendChild(orderRow);
+
+            // Add a line after each order except for the last one
+            if (index < cartItems.length - 1) {
+                let lineRow = document.createElement('tr');
+                let lineCell = document.createElement('td');
+                let breaker = document.createElement('br');
+
+                lineCell.setAttribute('colspan', '4');
+                lineCell.classList.add('line');
+                lineRow.appendChild(lineCell);
+
+                // Add a line after each order
+                orderTableBody.appendChild(breaker.cloneNode(true));
+                orderTableBody.appendChild(lineRow);
+                orderTableBody.appendChild(breaker.cloneNode(true));
+            }
+        });
+
+        // Calculate total price without GST and delivery
+        let totalPrice = calculateTotalPrice(cartItems);
+
+        // Calculate GST (6% of the total price)
+        let gstAmount = 0.06 * totalPrice;
+
+        // Add delivery cost
+        let deliveryCost = 5.50;
+
+        // Calculate total price with GST and delivery
+        let totalPriceWithGSTAndDelivery = totalPrice + gstAmount + deliveryCost;
+
+        // Display the values in the HTML
+        document.querySelector('.total .left.thin.dense').textContent = `GST 6%`;
+        document.querySelector('.total .right.thin.dense:first-child').textContent = `RM ${gstAmount.toFixed(2)}`;
+        document.querySelector('.total .right.bold:last-child').textContent = `RM ${totalPriceWithGSTAndDelivery.toFixed(2)}`;
+
+        // Save data to localStorage
+        localStorage.setItem('totalPriceWithGSTAndDelivery', totalPriceWithGSTAndDelivery);
+        localStorage.setItem('gstAmount', gstAmount);
+        localStorage.setItem('itemNames', JSON.stringify(itemNames)); // Store item names as a JSON string
+        localStorage.setItem('itemQuantities', JSON.stringify(itemQuantities)); // Store item quantities as a JSON string
+        localStorage.setItem('itemPrices', JSON.stringify(itemPrices)); // Store item prices as a JSON string
+
+
+    });
+
+    function checkout() {
+        window.location.href = 'payment.html';
+    }
+
+    // Function to calculate total price
+    function calculateTotalPrice(cartItems) {
+        return cartItems.reduce((total, item) => total + item.quantity * parseFloat(item.price.replace(/[^\d.]/g, '')), 0);
+    }
+     </script>
+   </body>
+ </html>
+  

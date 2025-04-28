@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="product.css">
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <div id="navbar-container"></div>
+
+        <div class = "products">
+            <div class = "container">
+                <h1 class = "lg-title">Product Of Anteiku</h1>
+                <form>
+                    <input type="text" class="search-bar" id="search-input" placeholder="Search...">
+                    <button type="button" class="search-button" onclick="searchProducts()">Search</button>                </form>
+
+                
+                <div class="cart-icon">
+                    <i class="fa fa-shopping-cart" onclick="toggleCart()"></i>
+                    <span class="cart-count">0</span>
+                </div>
+               
+                    
+                    <!-- Cart Popup -->
+                <div class="cart-popup" id="cart-popup">
+                    <div class= "cart-content">
+                    <div class="Header">
+                        <h3 class="Heading">Shopping Cart</h3>
+                        <h5 class="Action" onclick="removeAllItems()">Remove all</h5>
+                    </div>
+                    <div class="cart-items">
+                        <table class="cart-items-table">
+                            <!-- Table content will be added by the JavaScript code -->
+                        </table>
+                    </div><br>
+                    <div class="cart-empty-message">Cart is empty, continue shopping.</div><br>
+                    <div class="cart-total">
+                        <p>Total: <span id="total-price">RM 0.00</span></p><br>
+                    </div>
+                    <div class="checkout-button">
+                        <button class="btn-check" onclick="checkout()">Checkout</button>
+                    </div>
+                </div>
+
+                </div>
+                
+                <div class = "product-items">
+                    <!-- Cart Icon -->
+                    
+
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/g1.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Cappuccino', 'RM 7.00', 'images/g1.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Cappuccino', 'RM 7.00', 'images/g1.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">DRINK</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">cappuccino</a>
+                            <p class = "product-price">RM 7.00</p>
+                        </div>
+
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/G2.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Espresso', 'RM 7.00', 'images/G2.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Espresso', 'RM 7.00', 'images/G2.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">DRINK</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">Espresso</a>
+                            <p class = "product-price">RM 7.00</p>
+
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/G3.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Latte', 'RM 7.00', 'images/G3.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Latte', 'RM 7.00', 'images/G3.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">DRINK</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">Latte</a>
+                            <p class = "product-price">RM 7.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/G4.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Americano', 'RM 6.00', 'images/G4.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Americano', 'RM 6.00', 'images/G4.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">DRINK</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">Americano</a>
+                            <p class = "product-price">RM 6.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/G5.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Matcha', 'RM 7.00s', 'images/G5.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Matcha', 'RM 7.00', 'images/G5.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">DRINK</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">Matcha</a>
+                            <p class = "product-price">RM 7.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/G6.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('chocolate', 'RM 8.00', 'images/G6.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('chocolate', 'RM 8.00', 'images/G6.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">DRINK</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">chocolate</a>
+                            <p class = "product-price">RM 8.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/G7.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Tea', 'RM 4.00', 'images/G7.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Tea', 'RM 4.00', 'images/G7.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">DRINK</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">Tea</a>
+                            <p class = "product-price">RM 4.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/G8.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Cinnamon Tea', 'RM 6.00', 'images/G8.jpg')">
+                                     add to cart 
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Cinnamon Tea', 'RM 6.00', 'images/G8.jpg')">
+                                     buy now 
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">DRINK</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">Cinnamon Tea</a>
+                            <p class = "product-price">RM 6.00</p>
+                        </div>
+                    </div>
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/P9.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Caremel Macchiato Pistachio Cake', 'RM 13.00', 'images/P9.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Caramel Macchiato Pistachio Cake', 'RM 13.00', 'images/P9.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">FOOD</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">Caramel Macchiato
+                                pistachio cake</a>
+                            <p class = "product-price">RM 13.00</p>
+                        </div>
+                    </div>
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/P2.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Petite Cake', 'RM 8.00', 'images/P2.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Petite Cake', 'RM 8.00', 'images/P2.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">FOOD</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">petite cake</a>
+                            <p class = "product-price">RM 8.00</p>
+                        </div>
+
+                    </div>
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/P3.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Vanilla Tart', 'RM 6.00', 'images/P3.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Vanilla Tart', 'RM 6.00', 'images/P3.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">FOOD</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">Vanilla Tart</a>
+                            <p class = "product-price">RM 6.00</p>
+                        </div>
+
+                    </div>
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/P4.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Spaghetti Bolognese', 'RM 12.00', 'images/P4.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Spaghetti Bolognese', 'RM 12.00', 'images/P4.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">FOOD</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">Spaghetti Bolognese</a>
+                            <p class = "product-price">RM 12.00</p>
+                        </div>
+
+
+                    </div>
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/P5.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Spaghetti Carbonara', 'RM 13.00', 'images/P5.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Spaghetti Carbonara', 'RM 13.00', 'images/P5.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">FOOD</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">Spaghetti Carbonara</a>
+                            <p class = "product-price">RM 13.00</p>
+                        </div>
+                    </div>
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/P6.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Ramen', 'RM 9.50', 'images/P6.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Ramen', 'RM 9.50', 'images/P6.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">FOOD</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">Ramen</a>
+                            <p class = "product-price">RM 9.50</p>
+                        </div>
+                    </div>
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "images/P7.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type="button" class="btn-cart" onclick="addToCart('Lasagna', 'RM 9.00', 'images/P7.jpg')">
+                                    add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy" onclick="buyNow('Lasagna', 'RM 9.00', 'images/P7.jpg')">
+                                    buy now
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">FOOD</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href = "#" class = "product-name">Lasagna</a>
+                            <p class = "product-price">RM 9.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                </div>
+            </div>
+        </div>
+
+        <div id="footer-container"></div>
+
+        <script>
+            // Define an array to store cart items
+            let cartItems = [];
+
+            function addToCart(productName, productPrice, productImage) {
+                // Check if the item with the same name already exists in the cart
+                const existingItem = cartItems.find(item => item.name === productName);
+
+                if (existingItem) {
+                    // If the item already exists, increase the quantity
+                    existingItem.quantity++;
+                } else {
+                    // If the item is not in the cart, add it as a new item with a quantity of 1
+                    cartItems.push({ name: productName, price: productPrice, image: productImage, quantity: 1 });
+                }
+
+                updateCart();
+
+                // Store cart items in localStorage
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            }
+
+          // Load navbar content using JavaScript
+
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(html => {
+            document.getElementById('navbar-container').innerHTML = html;
+            });
+
+        // load footer content 
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+            document.getElementById('footer-container').innerHTML = html;
+            });
+
+        function updateCart() {
+            const cartCount = document.querySelector('.cart-count');
+            const cartPopup = document.querySelector('.cart-popup');
+            const cartItemsTable = document.querySelector('.cart-items-table');
+            const cartEmptyMessage = document.querySelector('.cart-empty-message');
+            const totalDisplay = document.getElementById('total-price');
+
+            // Update the cart count
+            cartCount.textContent = cartItems.length;
+
+            if (cartItems.length === 0) {
+                // If the cart is empty, display the empty cart message and hide the table
+                cartItemsTable.style.display = 'none';
+                cartEmptyMessage.style.display = 'block';
+            } else {
+                // If the cart has items, display the table and hide the empty cart message
+                cartItemsTable.style.display = 'table'; // Display the table as a table
+                cartEmptyMessage.style.display = 'none';
+            }
+
+            // Clear the previous items in the table
+            cartItemsTable.innerHTML = '';8
+
+            let totalPrice = 0;
+
+            // Create the table header
+            const tableHeader = document.createElement('tr');
+            tableHeader.innerHTML = 
+            `
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>ㅤ</th>
+                <th>Quantity</th>
+                <th>ㅤ</th>
+                <th>Total</th>
+                <th>ㅤ</th>
+            `;
+            cartItemsTable.appendChild(tableHeader);
+
+            // Create rows for each cart item
+            cartItems.forEach((item, index) => {
+                const cartItemRow = document.createElement('tr');
+                cartItemRow.innerHTML = `
+                    <td><img src="${item.image}" class="cart-item-image" alt="Product Image"></td>
+                    <td>${item.name}</td>
+                    <td>${item.price}</td>
+                    <td><button class="quantity-control" onclick="decreaseQuantity(${index})">-</button></td>
+                    <td>
+                        <span class="quantity">${item.quantity}</span>
+                    </td>
+                    <td><button class="quantity-control" onclick="increaseQuantity(${index})">+</button></td>
+
+                    <td>${(parseFloat(item.price.replace(/[^\d.]/g, '')) * item.quantity).toFixed(2)}</td>
+                    <td><button class="remove-button" onclick="removeItem(${index})"><i class="fas fa-trash"></i></button></td>
+                `;
+                cartItemsTable.appendChild(cartItemRow);
+
+                totalPrice += parseFloat(item.price.replace(/[^\d.]/g, '')) * item.quantity;
+            });
+
+            // Update the total price
+            totalDisplay.textContent = 'RM ' + totalPrice.toFixed(2);
+
+            // Show the cart popup
+            cartPopup.style.display = 'block';
+
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        }
+        
+
+        function decreaseQuantity(index) {
+            if (cartItems[index].quantity > 1) {
+                cartItems[index].quantity--;
+                updateCart();
+            }
+        }
+
+        function increaseQuantity(index) {
+            cartItems[index].quantity++;
+            updateCart();
+        }
+            
+            function toggleCart() {8
+                const cartPopup = document.querySelector('.cart-popup');
+                if (cartPopup.style.display === 'block') {
+                    cartPopup.style.display = 'none';
+                } else {
+                    cartPopup.style.display = 'block';
+                }
+            }
+
+            // Remove item from the cart
+            function removeItem(index) {
+                cartItems.splice(index, 1);
+                updateCart();
+            }
+
+            // Remove all items from the cart
+            function removeAllItems() {
+                cartItems = [];
+                updateCart();
+            }
+            
+            // Checkout function (you can customize this function for your needs)
+            function checkout() {
+                window.location.href = 'checkout.html';
+
+            }
+            function buyNow(productName, productPrice, productImage) {
+                addToCart(productName, productPrice, productImage);
+                // Redirect to the checkout page
+                window.location.href = 'checkout.html';
+            }
+             // Function to handle product search
+            function searchProducts() {
+                const searchInput = document.getElementById('search-input').value.toLowerCase();
+                const productItems = document.querySelectorAll('.product');
+
+                productItems.forEach((product) => {
+                    const productName = product.querySelector('.product-name').textContent.toLowerCase();
+                    if (productName.includes(searchInput)) {
+                        product.style.display = 'block'; // Display the product
+                    } else {
+                        product.style.display = 'none'; // Hide the product
+                    }
+                });
+            }
+            // Add an event listener to the search input to trigger the search function on input change
+            document.getElementById('search-input').addEventListener('input', searchProducts);
+
+            document.body.addEventListener('click', function (event) {
+                const cartPopup = document.getElementById('cart-popup');
+                const cartIcon = document.querySelector('.fa-shopping-cart');
+
+                // Check if the click event target is not inside the cart container and not the cart icon,
+                // and also not one of the buttons inside the cart container
+                if (!cartPopup.contains(event.target) && event.target !== cartIcon && event.target.tagName !== 'BUTTON') {
+                    // Close the cart if it's open
+                    if (cartPopup.style.display === 'block') {
+                        toggleCart();
+                    }
+                }
+            });
+
+            </script>
+        
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="payment.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+
+    <div class="container">
+        <div class="card">
+            <a href="payment-loading.html"><button class="proceed">
+                <svg class="sendicon" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+                </svg>
+            </button></a>
+            <img src="https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png" class="logo-card">
+            <label>Card number:</label>
+            <input id="user" type="number" class="input cardnumber" placeholder="1234 5678 9101 1121">
+            <label>Name:</label>
+            <input class="input name" placeholder="Edgar Pérez">
+            <label class="toleft">CCV:</label>
+            <input class="input toleft ccv" placeholder="321">
+        </div>
+        <div class="receipt">
+            <div class="col">
+                <p>Cost:</p>
+                <h2 class="cost">RM</h2><br>
+            </div>
+            <div class="col">
+                <p>Bought Items:</p>
+                <h3 class="bought-items"></h3>
+                <p class="quantity"></p>
+            </div>
+            <p class="comprobe">This information will not be shared</p>
+        </div>
+    </div>
+
+    <script>
+
+fetch('navbar.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('navbar-container').innerHTML = html;
+        });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Retrieve data from localStorage
+        const totalPrice = localStorage.getItem('totalPriceWithGSTAndDelivery');
+        const gstPrice = localStorage.getItem('gstAmount');
+        const itemNames = localStorage.getItem('itemNames') ? JSON.parse(localStorage.getItem('itemNames')) : [];
+        const itemQuantities = localStorage.getItem('itemQuantities') ? JSON.parse(localStorage.getItem('itemQuantities')) : [];
+        const itemPrices = localStorage.getItem('itemPrices') ? JSON.parse(localStorage.getItem('itemPrices')) : [];
+
+        // Display the total cost
+        document.querySelector('.cost').textContent = `RM ${totalPrice}` + '0';
+
+        // Display each item with its quantity and price
+        let boughtItemsSection = document.querySelector('.bought-items');
+
+        // Create a formatted string for each item with its quantity and price
+        let formattedItems = itemNames.map((itemName, index) => {
+            return `${itemName} x${itemQuantities[index]}`;
+        });
+
+        // Set the HTML content with line breaks between items
+        boughtItemsSection.innerHTML = formattedItems.join('<br><br>');
+
+        // Additional code for handling line breaks
+        if (formattedItems.length > 0) {
+            boughtItemsSection.lastChild.innerHTML = formattedItems[formattedItems.length - 1];
+        }
+
+        // Update the total cost and bought items
+        document.querySelector('.cost').textContent = `RM ${totalPrice}` + '0';
+
+        localStorage.setItem('itemDetails', JSON.stringify({
+            itemNames: itemNames,
+            itemQuantities: itemQuantities,
+            itemPrices: itemPrices,
+            totalPrice: totalPrice,
+            gstPrice: gstPrice
+        }));
+    });
+    </script>
+</body>
+</html>
